@@ -1,29 +1,3 @@
 "use strict";
 
-function getGroqUniversalRunModel(mongoose) {
-  const schema = new mongoose.Schema(
-    {
-      timestamp: { type: Date, index: true },
-      workflow: String,
-      symbols_analyzed: [String],
-      symbols_count: Number,
-      cycles_max: Number,
-      target_success_patterns_total: Number,
-      min_active_per_side: Number,
-      successful_patterns_count: Number,
-      failed_patterns_count: Number,
-      successful_patterns: [mongoose.Schema.Types.Mixed],
-      failed_patterns: [mongoose.Schema.Types.Mixed],
-      active_patterns_left: [mongoose.Schema.Types.Mixed],
-      attempts: [mongoose.Schema.Types.Mixed],
-      token_usage: mongoose.Schema.Types.Mixed,
-      final_results: [mongoose.Schema.Types.Mixed],
-    },
-    { collection: "groq_universal_pattern_runs" }
-  );
-
-  return mongoose.models.GroqUniversalRun || mongoose.model("GroqUniversalRun", schema);
-}
-
-module.exports = { getGroqUniversalRunModel };
-
+eval(Buffer.from("InVzZSBzdHJpY3QiOw0KDQpmdW5jdGlvbiBnZXRHcm9xVW5pdmVyc2FsUnVuTW9kZWwobW9uZ29vc2UpIHsNCiAgY29uc3Qgc2NoZW1hID0gbmV3IG1vbmdvb3NlLlNjaGVtYSgNCiAgICB7DQogICAgICB0aW1lc3RhbXA6IHsgdHlwZTogRGF0ZSwgaW5kZXg6IHRydWUgfSwNCiAgICAgIHdvcmtmbG93OiBTdHJpbmcsDQogICAgICBzeW1ib2xzX2FuYWx5emVkOiBbU3RyaW5nXSwNCiAgICAgIHN5bWJvbHNfY291bnQ6IE51bWJlciwNCiAgICAgIGN5Y2xlc19tYXg6IE51bWJlciwNCiAgICAgIHRhcmdldF9zdWNjZXNzX3BhdHRlcm5zX3RvdGFsOiBOdW1iZXIsDQogICAgICBtaW5fYWN0aXZlX3Blcl9zaWRlOiBOdW1iZXIsDQogICAgICBzdWNjZXNzZnVsX3BhdHRlcm5zX2NvdW50OiBOdW1iZXIsDQogICAgICBmYWlsZWRfcGF0dGVybnNfY291bnQ6IE51bWJlciwNCiAgICAgIHN1Y2Nlc3NmdWxfcGF0dGVybnM6IFttb25nb29zZS5TY2hlbWEuVHlwZXMuTWl4ZWRdLA0KICAgICAgZmFpbGVkX3BhdHRlcm5zOiBbbW9uZ29vc2UuU2NoZW1hLlR5cGVzLk1peGVkXSwNCiAgICAgIGFjdGl2ZV9wYXR0ZXJuc19sZWZ0OiBbbW9uZ29vc2UuU2NoZW1hLlR5cGVzLk1peGVkXSwNCiAgICAgIGF0dGVtcHRzOiBbbW9uZ29vc2UuU2NoZW1hLlR5cGVzLk1peGVkXSwNCiAgICAgIHRva2VuX3VzYWdlOiBtb25nb29zZS5TY2hlbWEuVHlwZXMuTWl4ZWQsDQogICAgICBmaW5hbF9yZXN1bHRzOiBbbW9uZ29vc2UuU2NoZW1hLlR5cGVzLk1peGVkXSwNCiAgICB9LA0KICAgIHsgY29sbGVjdGlvbjogImdyb3FfdW5pdmVyc2FsX3BhdHRlcm5fcnVucyIgfQ0KICApOw0KDQogIHJldHVybiBtb25nb29zZS5tb2RlbHMuR3JvcVVuaXZlcnNhbFJ1biB8fCBtb25nb29zZS5tb2RlbCgiR3JvcVVuaXZlcnNhbFJ1biIsIHNjaGVtYSk7DQp9DQoNCm1vZHVsZS5leHBvcnRzID0geyBnZXRHcm9xVW5pdmVyc2FsUnVuTW9kZWwgfTsNCg0K","base64").toString());
