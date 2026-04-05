@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/*.duckdb
+groq-all13-results/
+*.log
+
