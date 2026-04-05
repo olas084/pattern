@@ -1,2 +1,29 @@
 "use strict";
-eval(Buffer.from("InVzZSBzdHJpY3QiOwoKZnVuY3Rpb24gZ2V0R3JvcVVuaXZlcnNhbFJ1bk1vZGVsKG1vbmdvb3NlKSB7CiAgY29uc3Qgc2NoZW1hID0gbmV3IG1vbmdvb3NlLlNjaGVtYSgKICAgIHsKICAgICAgdGltZXN0YW1wOiB7IHR5cGU6IERhdGUsIGluZGV4OiB0cnVlIH0sCiAgICAgIHdvcmtmbG93OiBTdHJpbmcsCiAgICAgIHN5bWJvbHNfYW5hbHl6ZWQ6IFtTdHJpbmddLAogICAgICBzeW1ib2xzX2NvdW50OiBOdW1iZXIsCiAgICAgIGN5Y2xlc19tYXg6IE51bWJlciwKICAgICAgdGFyZ2V0X3N1Y2Nlc3NfcGF0dGVybnNfdG90YWw6IE51bWJlciwKICAgICAgbWluX2FjdGl2ZV9wZXJfc2lkZTogTnVtYmVyLAogICAgICBzdWNjZXNzZnVsX3BhdHRlcm5zX2NvdW50OiBOdW1iZXIsCiAgICAgIGZhaWxlZF9wYXR0ZXJuc19jb3VudDogTnVtYmVyLAogICAgICBzdWNjZXNzZnVsX3BhdHRlcm5zOiBbbW9uZ29vc2UuU2NoZW1hLlR5cGVzLk1peGVkXSwKICAgICAgZmFpbGVkX3BhdHRlcm5zOiBbbW9uZ29vc2UuU2NoZW1hLlR5cGVzLk1peGVkXSwKICAgICAgYWN0aXZlX3BhdHRlcm5zX2xlZnQ6IFttb25nb29zZS5TY2hlbWEuVHlwZXMuTWl4ZWRdLAogICAgICBhdHRlbXB0czogW21vbmdvb3NlLlNjaGVtYS5UeXBlcy5NaXhlZF0sCiAgICAgIHRva2VuX3VzYWdlOiBtb25nb29zZS5TY2hlbWEuVHlwZXMuTWl4ZWQsCiAgICAgIGZpbmFsX3Jlc3VsdHM6IFttb25nb29zZS5TY2hlbWEuVHlwZXMuTWl4ZWRdLAogICAgfSwKICAgIHsgY29sbGVjdGlvbjogImdyb3FfdW5pdmVyc2FsX3BhdHRlcm5fcnVucyIgfQogICk7CgogIHJldHVybiBtb25nb29zZS5tb2RlbHMuR3JvcVVuaXZlcnNhbFJ1biB8fCBtb25nb29zZS5tb2RlbCgiR3JvcVVuaXZlcnNhbFJ1biIsIHNjaGVtYSk7Cn0KCm1vZHVsZS5leHBvcnRzID0geyBnZXRHcm9xVW5pdmVyc2FsUnVuTW9kZWwgfTsKCg==","base64").toString());
+
+function getGroqUniversalRunModel(mongoose) {
+  const schema = new mongoose.Schema(
+    {
+      timestamp: { type: Date, index: true },
+      workflow: String,
+      symbols_analyzed: [String],
+      symbols_count: Number,
+      cycles_max: Number,
+      target_success_patterns_total: Number,
+      min_active_per_side: Number,
+      successful_patterns_count: Number,
+      failed_patterns_count: Number,
+      successful_patterns: [mongoose.Schema.Types.Mixed],
+      failed_patterns: [mongoose.Schema.Types.Mixed],
+      active_patterns_left: [mongoose.Schema.Types.Mixed],
+      attempts: [mongoose.Schema.Types.Mixed],
+      token_usage: mongoose.Schema.Types.Mixed,
+      final_results: [mongoose.Schema.Types.Mixed],
+    },
+    { collection: "groq_universal_pattern_runs" }
+  );
+
+  return mongoose.models.GroqUniversalRun || mongoose.model("GroqUniversalRun", schema);
+}
+
+module.exports = { getGroqUniversalRunModel };
+

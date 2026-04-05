@@ -1,2 +1,62 @@
 "use strict";
-eval(Buffer.from("InVzZSBzdHJpY3QiOwoKY29uc3QgZnMgPSByZXF1aXJlKCJmcyIpOwpjb25zdCBwYXRoID0gcmVxdWlyZSgicGF0aCIpOwpjb25zdCBodHRwID0gcmVxdWlyZSgiaHR0cCIpOwpjb25zdCBodHRwcyA9IHJlcXVpcmUoImh0dHBzIik7Cgpjb25zdCBEQVRBX0RJUiA9IHBhdGguam9pbihfX2Rpcm5hbWUsICJkYXRhIik7CmNvbnN0IERCX0ZJTEUgPSBwYXRoLmpvaW4oREFUQV9ESVIsICJiYWNrdGVzdGluZy5kdWNrZGIiKTsKY29uc3QgRFVDS0RCX1VSTCA9IFN0cmluZyhwcm9jZXNzLmVudi5EVUNLREJfVVJMIHx8ICIiKS50cmltKCk7CgpmdW5jdGlvbiBkb3dubG9hZEZpbGUodXJsLCBkZXN0KSB7CiAgcmV0dXJuIG5ldyBQcm9taXNlKChyZXNvbHZlLCByZWplY3QpID0+IHsKICAgIGNvbnN0IGNsaWVudCA9IHVybC5zdGFydHNXaXRoKCJodHRwczovLyIpID8gaHR0cHMgOiBodHRwOwogICAgY29uc3QgcmVxID0gY2xpZW50LmdldCh1cmwsIChyZXMpID0+IHsKICAgICAgaWYgKHJlcy5zdGF0dXNDb2RlID49IDMwMCAmJiByZXMuc3RhdHVzQ29kZSA8IDQwMCAmJiByZXMuaGVhZGVycy5sb2NhdGlvbikgewogICAgICAgIHJlcy5yZXN1bWUoKTsKICAgICAgICByZXR1cm4gcmVzb2x2ZShkb3dubG9hZEZpbGUocmVzLmhlYWRlcnMubG9jYXRpb24sIGRlc3QpKTsKICAgICAgfQogICAgICBpZiAocmVzLnN0YXR1c0NvZGUgIT09IDIwMCkgewogICAgICAgIHJlcy5yZXN1bWUoKTsKICAgICAgICByZXR1cm4gcmVqZWN0KG5ldyBFcnJvcihgRG93bmxvYWQgZmFpbGVkOiBIVFRQICR7cmVzLnN0YXR1c0NvZGV9YCkpOwogICAgICB9CiAgICAgIGNvbnN0IHRtcCA9IGAke2Rlc3R9LnRtcGA7CiAgICAgIGNvbnN0IG91dCA9IGZzLmNyZWF0ZVdyaXRlU3RyZWFtKHRtcCk7CiAgICAgIHJlcy5waXBlKG91dCk7CiAgICAgIG91dC5vbigiZmluaXNoIiwgKCkgPT4gewogICAgICAgIG91dC5jbG9zZSgoKSA9PiB7CiAgICAgICAgICBmcy5yZW5hbWVTeW5jKHRtcCwgZGVzdCk7CiAgICAgICAgICByZXNvbHZlKCk7CiAgICAgICAgfSk7CiAgICAgIH0pOwogICAgICBvdXQub24oImVycm9yIiwgcmVqZWN0KTsKICAgIH0pOwogICAgcmVxLm9uKCJlcnJvciIsIHJlamVjdCk7CiAgfSk7Cn0KCmFzeW5jIGZ1bmN0aW9uIHJ1bigpIHsKICBpZiAoIWZzLmV4aXN0c1N5bmMoREFUQV9ESVIpKSBmcy5ta2RpclN5bmMoREFUQV9ESVIsIHsgcmVjdXJzaXZlOiB0cnVlIH0pOwoKICBpZiAoZnMuZXhpc3RzU3luYyhEQl9GSUxFKSkgewogICAgY29uc3Qgc3RhdCA9IGZzLnN0YXRTeW5jKERCX0ZJTEUpOwogICAgY29uc29sZS5sb2coYFtkdWNrZGJdIFVzaW5nIGV4aXN0aW5nIGxvY2FsIERCOiAke0RCX0ZJTEV9ICgke3N0YXQuc2l6ZX0gYnl0ZXMpYCk7CiAgICByZXR1cm47CiAgfQoKICBpZiAoIURVQ0tEQl9VUkwpIHsKICAgIHRocm93IG5ldyBFcnJvcigiTm8gbG9jYWwgRHVja0RCIGZvdW5kIGFuZCBEVUNLREJfVVJMIGlzIG5vdCBzZXQuIik7CiAgfQoKICBjb25zb2xlLmxvZyhgW2R1Y2tkYl0gRG93bmxvYWRpbmcgZGF0YWJhc2UgZnJvbSBEVUNLREJfVVJMLi4uYCk7CiAgYXdhaXQgZG93bmxvYWRGaWxlKERVQ0tEQl9VUkwsIERCX0ZJTEUpOwogIGNvbnN0IHN0YXQgPSBmcy5zdGF0U3luYyhEQl9GSUxFKTsKICBjb25zb2xlLmxvZyhgW2R1Y2tkYl0gRG93bmxvYWQgY29tcGxldGU6ICR7REJfRklMRX0gKCR7c3RhdC5zaXplfSBieXRlcylgKTsKfQoKcnVuKCkuY2F0Y2goKGVycikgPT4gewogIGNvbnNvbGUuZXJyb3IoIltkdWNrZGJdIFByZXBhcmUgZmFpbGVkOiIsIGVyci5tZXNzYWdlIHx8IGVycik7CiAgcHJvY2Vzcy5leGl0Q29kZSA9IDE7Cn0pOwoK","base64").toString());
+
+const fs = require("fs");
+const path = require("path");
+const http = require("http");
+const https = require("https");
+
+const DATA_DIR = path.join(__dirname, "data");
+const DB_FILE = path.join(DATA_DIR, "backtesting.duckdb");
+const DUCKDB_URL = String(process.env.DUCKDB_URL || "").trim();
+
+function downloadFile(url, dest) {
+  return new Promise((resolve, reject) => {
+    const client = url.startsWith("https://") ? https : http;
+    const req = client.get(url, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        res.resume();
+        return resolve(downloadFile(res.headers.location, dest));
+      }
+      if (res.statusCode !== 200) {
+        res.resume();
+        return reject(new Error(`Download failed: HTTP ${res.statusCode}`));
+      }
+      const tmp = `${dest}.tmp`;
+      const out = fs.createWriteStream(tmp);
+      res.pipe(out);
+      out.on("finish", () => {
+        out.close(() => {
+          fs.renameSync(tmp, dest);
+          resolve();
+        });
+      });
+      out.on("error", reject);
+    });
+    req.on("error", reject);
+  });
+}
+
+async function run() {
+  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+
+  if (fs.existsSync(DB_FILE)) {
+    const stat = fs.statSync(DB_FILE);
+    console.log(`[duckdb] Using existing local DB: ${DB_FILE} (${stat.size} bytes)`);
+    return;
+  }
+
+  if (!DUCKDB_URL) {
+    throw new Error("No local DuckDB found and DUCKDB_URL is not set.");
+  }
+
+  console.log(`[duckdb] Downloading database from DUCKDB_URL...`);
+  await downloadFile(DUCKDB_URL, DB_FILE);
+  const stat = fs.statSync(DB_FILE);
+  console.log(`[duckdb] Download complete: ${DB_FILE} (${stat.size} bytes)`);
+}
+
+run().catch((err) => {
+  console.error("[duckdb] Prepare failed:", err.message || err);
+  process.exitCode = 1;
+});
+
