@@ -1,0 +1,17 @@
+{
+  "name": "groq-all13-runner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Universal pattern search across 13 symbols using Groq + DuckDB",
+  "main": "groqpattern-all13.js",
+  "scripts": {
+    "start": "node prepare-duckdb.js && node groqpattern-all13.js",
+    "run": "node groqpattern-all13.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "duckdb": "^1.1.3",
+    "got": "^14.4.5",
+    "mongoose": "^8.19.1"
+  }
+}
