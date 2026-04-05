@@ -4,6 +4,8 @@ const fs = require("fs");
 const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, ".env") });
 const { getGroqUniversalRunModel } = require("./schemas/groqUniversalRun");
+const gotModule = require("got");
+const got = typeof gotModule === "function" ? gotModule : (gotModule?.got || gotModule?.default);
 
 let duckdb = null;
 try { duckdb = require("duckdb"); } catch (_) {}
@@ -22,6 +24,7 @@ const GROQ_ENABLED = ["1", "true", "yes", "on"].includes(String(process.env.GROQ
 const GROQ_TIMEOUT = Number(process.env.GROQ_TIMEOUT_MS || 120_000);
 const GROQ_MAX_RETRY = Number(process.env.GROQ_MAX_RETRY || 4);
 const MONGO_URI = process.env.MONGO_URI || "";
+const SELF_PING_URL = process.env.SELF_PING_URL || "https://continuation.onrender.com";
 
 const SYMBOLS = (process.env.BACKTEST_SYMBOLS || "").trim()
   ? process.env.BACKTEST_SYMBOLS.split(",").map((s) => s.trim()).filter(Boolean)
@@ -31,6 +34,33 @@ const TIMEFRAMES = [1, 2, 3, 5, 10, 15];
 const MAX_ROUNDS = 10;
 
 function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
+
+async function runSelfPing() {
+  if (typeof got !== "function") {
+    console.error("Self-ping skipped: got client is unavailable");
+    return;
+  }
+  try {
+    const startedAt = Date.now();
+    const res = await got(SELF_PING_URL, {
+      throwHttpErrors: false,
+      timeout: { request: 10000 },
+    });
+    const ms = Date.now() - startedAt;
+    if (res.statusCode >= 200 && res.statusCode < 400) {
+      console.log(`Self-ping OK: status=${res.statusCode} latency=${ms}ms`);
+    } else {
+      console.warn(`Self-ping non-2xx: status=${res.statusCode} latency=${ms}ms`);
+    }
+  } catch (err) {
+    console.error("Self-ping failed:", err.message);
+  }
+}
+
+setTimeout(() => {
+  runSelfPing();
+  setInterval(runSelfPing, 5 * 60 * 1000);
+}, 60 * 1000);
 
 function dbAll(db, sql) {
   return new Promise((resolve, reject) => db.all(sql, (err, rows) => (err ? reject(err) : resolve(rows || []))));
